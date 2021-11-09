@@ -7,10 +7,11 @@ Project 1: an app to link two users' locations and find a mid-point for them to 
 
 ## User Story
 As a - who
-As two individuals who want to meet up
+As two individuals in New York City who want to meet up
 
 I want -what 
-I want to meet up inbetween our locations
+I want to meet up in between our locations within New York City
 
 Because - why
-Because we don't know the city and want to know places to meet up between out locations
+We want to know places to meet up between our locations so that we can spend an equal amount of time traveling 
+
