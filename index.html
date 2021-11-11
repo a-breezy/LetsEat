@@ -1,66 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" 
-    content='meetMe makes it easy to "meet halfway". Split the commute fairly with bars, restaurants, and more midway between you and your friends.' />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>meetMe</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">meetMe</h1>
-      <p class="lead">The simple way to meet friends</p>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>meetMe</title>
+</head>
 
-    <section>
-      <!-- row one to hold input of user1 locaiton and category of place to meet -->
-      <div class="row">
-        <div id="userLocation1" class="col-6">
-            <input type="text" name="user-location-1" placeholder="Enter Location of First User">
-            </input>
-        </div>
-        <div id="categories" class="col-6">input category of place to meet
-            <select name="categories" class="select-dropdown">
-                <option value="" selected disabled>Select a Category</option>
-                <option value="Cafe">Cafe</option>
-                <option value="Restaurant">Restaurant</option>
-                <option value="Bar">Bar</option>
-                <option value="Park">Park</option>
-            </select>
-        </div>
+<body class="min-vh-100">
+  <header class="jumbotron">
+    <nav class="navbar mx-2">
+      <div class="navbar-brand">
+        <a href="#">
+          <img src="assets/images/meetMe-logo-export.svg" alt="meetMe logo">
+        </a>
+        <p class="lead">The simple way to meet friends halfway</p>
       </div>
-      <!-- row two to hold input of user2 location and radius of places to meet -->
-      <div class="row">
-        <div id="userLocation2" class="col-6">
-            <input type="text" name="user-location-2" placeholder="Enter Location of Second User">
-            </input>
-        </div>
-        <div id="radiusDropdown" class="col-6">
-            <select name="radius" class="select-dropdown">
-                <option value="" selected disabled>Select a radius</option>
-                <option value="0.25">A Quarter Mile</option>
-                <option value="0.5">Half a Mile</option>
-                <option value="0.75">Three Quarters of a Mile</option>
-                <option value="1">One Mile</option>
-            </select>
-        </div>
-      </div>
-    </section>
+    </nav>
+  </header>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+  <section>
+    <!-- row one to hold input of user1 locaiton and category of place to meet -->
+    <div class="row">
+      <div id="userLocation1" class="col-12 col-md-6">
+        <label for="user-location-1">Your location:</label>
+        <input type="text" name="user-location-1" id="user-location-1" placeholder="Enter Location of First User">
+        </input>
+      </div>
+      <div id="categories" class="col-12 col-md-6">
+        <label for="categories" class="mr-2">input category of place to meet:</label>
+        <select name="categories" id="categories" class="select-dropdown">
+          <option value="" selected disabled>Select a Category</option>
+          <option value="Cafe">Cafe</option>
+          <option value="Restaurant">Restaurant</option>
+          <option value="Bar">Bar</option>
+          <option value="Park">Park</option>
+        </select>
+      </div>
+    </div>
+    <!-- row two to hold input of user2 location and radius of places to meet -->
+    <div class="row">
+      <div id="userLocation2" class="col-12 col-md-6">
+        <label for="user-location-2">Your friend's location:</label>
+        <input type="text" name="user-location-2" id="user-location-2" placeholder="Enter Location of Second User">
+        </input>
+      </div>
+      <div id="radiusDropdown" class="col-12 col-md-6">
+        <select name="radius" id="radiusDropdown" class="select-dropdown">
+          <option value="" selected disabled>Select a radius</option>
+          <option value="0.25">A Quarter Mile</option>
+          <option value="0.5">Half a Mile</option>
+          <option value="0.75">Three Quarters of a Mile</option>
+          <option value="1">One Mile</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <main class="results row">
+    <div class="col-12 col-md-6">this is where the map will go
+      <iframe>
+        
+      </iframe>
+    </div>
+    <div class="col-12 col-md-6">this is where the results will go as a collapsible list
+      <ul class="list-group">
+        
+      </ul>
+    </div>
+  </main>
+
+  <footer class="col-12 mt-auto">
+    &copy;2021 by Team Tensor &#x1F9CA;
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
