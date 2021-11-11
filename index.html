@@ -23,17 +23,18 @@
     </nav>
   </header>
 
-  <section>
+  <!-- form asking for user info -->
+  <section class="container">
     <!-- row one to hold input of user1 locaiton and category of place to meet -->
     <div class="row">
       <div id="userLocation1" class="col-12 col-md-6">
         <label for="user-location-1">Your location:</label>
-        <input type="text" name="user-location-1" id="user-location-1" placeholder="Enter Location of First User">
+        <input type="text" name="user-location-1" id="user-location-1" class="form-control" placeholder="Enter Location of First User">
         </input>
       </div>
       <div id="categories" class="col-12 col-md-6">
         <label for="categories" class="mr-2">input category of place to meet:</label>
-        <select name="categories" id="categories" class="select-dropdown">
+        <select name="categories" id="categories" class="form-select">
           <option value="" selected disabled>Select a Category</option>
           <option value="Cafe">Cafe</option>
           <option value="Restaurant">Restaurant</option>
@@ -46,17 +47,26 @@
     <div class="row">
       <div id="userLocation2" class="col-12 col-md-6">
         <label for="user-location-2">Your friend's location:</label>
-        <input type="text" name="user-location-2" id="user-location-2" placeholder="Enter Location of Second User">
+        <input type="text" name="user-location-2" id="user-location-2" class="form-control" placeholder="Enter Location of Second User">
         </input>
       </div>
       <div id="radiusDropdown" class="col-12 col-md-6">
-        <select name="radius" id="radiusDropdown" class="select-dropdown">
+        <label for="radiusDropdown">How far out of your way should you go?</label>
+        <select name="radius" id="radiusDropdown" class="form-select">
           <option value="" selected disabled>Select a radius</option>
           <option value="0.25">A Quarter Mile</option>
           <option value="0.5">Half a Mile</option>
           <option value="0.75">Three Quarters of a Mile</option>
           <option value="1">One Mile</option>
         </select>
+      </div>
+    </div>
+    <!-- row for button -->
+    <div class="row">
+      <div class="col-12 col-md-offset-8 col-md-4">
+      <button type="button" class="btn btn-success btn-lg col-3">
+        meet me!
+      </button>
       </div>
     </div>
   </section>
