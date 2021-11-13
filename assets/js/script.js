@@ -1,9 +1,9 @@
 var results = $("#result");
 
 function yelpAPI() {
-  var location = "11220";
+  var location = document.querySelector("#locationInput").value;
   var apiURL =
-    "https://uatapi.smartechc.com/api/test/yelpsearch?term=restaurants&radius=1000&location=" +
+    "https://uatapi.smartechc.com/api/test/yelpsearch?term=restaurants&radius=500&location=" +
     location +
     "&open_now=true&limit=50";
   $.ajax({
