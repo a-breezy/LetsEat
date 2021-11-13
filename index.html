@@ -13,47 +13,28 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>meetMe</title>
+    <title>Let's Eat!</title>
   </head>
 
   <body>
     <header class="jumbotron">
-      <h1 class="display-3">meetMe</h1>
-      <p class="lead">The simple way to meet friends</p>
+      <h1 class="display-3">Let's Eat!</h1>
+      <p class="lead">Streamline your restaurant game. Tell us where you are and we'll tell you where to eat! </p>
     </header>
 
     <section>
       <!-- row one to hold input of user1 locaiton and category of place to meet -->
       <div class="row">
-        <div id="userLocation1" class="col-6">
-            <input type="text" name="user-location-1" placeholder="Enter Location of First User">
+        <div id="Location" class="col-6">
+            <input id="locationInput" type="text" name="locationInput" placeholder="Where are you?">
             </input>
         </div>
-        <div id="categories" class="col-6">input category of place to meet
-            <select name="categories" class="select-dropdown">
-                <option value="" selected disabled>Select a Category</option>
-                <option value="Cafe">Cafe</option>
-                <option value="Restaurant">Restaurant</option>
-                <option value="Bar">Bar</option>
-                <option value="Park">Park</option>
-            </select>
+        <div id="search-button">
+            <button id="search">Spin!</button>
         </div>
+        <div id="result"></div>
       </div>
-      <!-- row two to hold input of user2 location and radius of places to meet -->
-      <div class="row">
-        <div id="userLocation2" class="col-6">
-            <input type="text" name="user-location-2" placeholder="Enter Location of Second User">
-            </input>
-        </div>
-        <div id="radiusDropdown" class="col-6">
-            <select name="radius" class="select-dropdown">
-                <option value="" selected disabled>Select a radius</option>
-                <option value="0.25">A Quarter Mile</option>
-                <option value="0.5">Half a Mile</option>
-                <option value="0.75">Three Quarters of a Mile</option>
-                <option value="1">One Mile</option>
-            </select>
-        </div>
+    
       </div>
     </section>
 
