@@ -29,35 +29,16 @@
     <section>
       <!-- row one to hold input of user1 locaiton and category of place to meet -->
       <div class="row">
-        <div id="userLocation1" class="col-6">
+        <div id="Location" class="col-6">
             <input type="text" name="user-location-1" placeholder="Enter Location of First User">
             </input>
         </div>
-        <div id="categories" class="col-6">input category of place to meet
-            <select name="categories" class="select-dropdown">
-                <option value="" selected disabled>Select a Category</option>
-                <option value="Cafe">Cafe</option>
-                <option value="Restaurant">Restaurant</option>
-                <option value="Bar">Bar</option>
-                <option value="Park">Park</option>
-            </select>
+        <div id="search-button">
+            <button id="search">Randomize Restaurant</button>
         </div>
+        <div id="result"></div>
       </div>
-      <!-- row two to hold input of user2 location and radius of places to meet -->
-      <div class="row">
-        <div id="userLocation2" class="col-6">
-            <input type="text" name="user-location-2" placeholder="Enter Location of Second User">
-            </input>
-        </div>
-        <div id="radiusDropdown" class="col-6">
-            <select name="radius" class="select-dropdown">
-                <option value="" selected disabled>Select a radius</option>
-                <option value="0.25">A Quarter Mile</option>
-                <option value="0.5">Half a Mile</option>
-                <option value="0.75">Three Quarters of a Mile</option>
-                <option value="1">One Mile</option>
-            </select>
-        </div>
+    
       </div>
     </section>
 

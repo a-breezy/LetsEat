@@ -1,9 +1,11 @@
 var results = $("#result");
 
 function yelpAPI() {
+  var location = "11220";
   var apiURL =
-    "https://uatapi.smartechc.com/api/test/yelpsearch?term=restaurants&radius=1000&location=11220&open_now=true&limit=50";
-
+    "https://uatapi.smartechc.com/api/test/yelpsearch?term=restaurants&radius=1000&location=" +
+    location +
+    "&open_now=true&limit=50";
   $.ajax({
     type: "GET",
     url: apiURL,
@@ -18,12 +20,15 @@ function yelpAPI() {
 }
 
 function DisplayData(data) {
+  results.html("");
   var latitude, longitude, url, rating;
   latitude = data.coordinates.latitude;
   longitude = data.coordinates.longitude;
   url = data.url;
   rating = data.rating;
-  var nameEl = document.createElement("h2");
+  var nameEl = document.createElement("a");
+  nameEl.href = url;
+  nameEl.target = "_blank";
   nameEl.textContent = data.name;
   var addressEl = document.createElement("address");
   addressEl.innerHTML =
