@@ -40,3 +40,12 @@ footer {
     right: 0;
     width: 100%;
 }
+
+.fav-spot {
+    text-align: center;
+}
+
+.fav-spot .subtitle {
+    border-bottom: 1px solid #00d1b2;
+    padding-bottom: 1vw;
+}
