@@ -18,17 +18,28 @@
     <div class="hero-head">
       <nav class="navbar align-items-center m-2">
         <div class="navbar-brand">
-          <div class="navbar-item title">
+          <div class="navbar-item title mb-0">
             let's eat!
           </div>
-          <div class="narbar-item">
-            <a class="title text-align-center" href="#">
+          <div class="narbar-item mb-0">
+            <a class="title text-align-center" href="/">
               <img src="./assets/images/lets-eat-white.png">
             </a>
           </div>
+          <a role="button" class="navbar-burger" data-target="navigation"></a>
         </div>
+        <div class="navbar-menu">
+          <div class="navbar-end" id="navigation">
+            <a class="navbar-item" href="./favorites.html">
+              Your Restaurants
+              <span class="fas fa-star ml-2"></span>
+            </a>
+            
+          </div>
+        </div>
+    </div>
 
-      </nav>
+    </nav>
     </div>
 
     <!-- hero/jumbotron -->
@@ -75,9 +86,9 @@
         <!-- spinning animation goes here  -->
       </div>
 
-       <!-- iframe and results go here -->
+      <!-- iframe and results go here -->
       <div class="column" id="result">
-        
+
       </div>
       <div class="column" id="map">
         <iframe>
