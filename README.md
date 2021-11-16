@@ -1,5 +1,5 @@
-# meetMe
-Project 1: an app to link two users' locations and find a mid-point for them to meet
+# letsEat
+An app that simplifies the decision process by randomly generating a restaurant in a user-input location.
 
 ### [live at GH-Pages](https://a-breezy.github.io/meetMe/)
 ### [Github Repo](https://github.com/a-breezy/meetMe)
@@ -7,11 +7,11 @@ Project 1: an app to link two users' locations and find a mid-point for them to 
 
 ## User Story
 As a - who
-As two individuals in New York City who want to meet up
+As a New Yorker who needs help in settling on where to eat. 
 
 I want -what 
-I want to meet up in between our locations within New York City
+I want to just eat. 
 
 Because - why
-We want to know places to meet up between our locations so that we can spend an equal amount of time traveling 
+There are so many choices out there and sometimes it doesn't matter when all I want to do is eat.
 
