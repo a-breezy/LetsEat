@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Let's Eat!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <title>Let's Eat!</title>
 </head>
 
 <body class="has-background-light">
@@ -42,69 +43,64 @@
     </nav>
     </div>
 
-    <!-- hero/jumbotron -->
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title pb-5 mx-auto hero-text">let's eat!</h1>
-        <p class="subtitle pt-5">
-          Streamline your restaurant game. Tell us where you are and we'll tell you where to eat!
-        </p>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="form-group mx-auto my-4 p-2">
-      <div class="columns">
-        <!-- get user location -->
-        <div class="column">
-          <div class="control has-icons-left">
-            <input id="locationInput" class="input is-primary" type="text" name="locationInput"
-              placeholder="Address, neighborhood, or zipcode" />
-            <span class="icon is-left">
-              <span class="fas fa-globe"></span>
-            </span>
-          </div>
-          <div class="help input-text">Where are you?</div>
+            </nav>
         </div>
 
-        <div class="column is-narrow">
-          <!-- search button -->
-          <div class="field">
-            <div class="control">
-              <button class="button is-link">
-                let's eat!
-              </button>
+        <!-- hero/jumbotron -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title pb-5 mx-auto hero-text">let's eat!</h1>
+                <p class="subtitle pt-5">
+                    Streamline your restaurant game. Tell us where you are and we'll tell you where to eat!
+                </p>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <section class="columns">
-      <div class="m-auto has-text-centered">
-        <!-- spinning animation goes here  -->
-      </div>
+    <main>
+        <section class="form-group mx-auto my-4 p-2">
+            <div class="columns">
+                <!-- get user location -->
+                <div class="column">
+                    <div class="control has-icons-left">
+                        <input id="locationInput" class="input is-primary" type="text" name="locationInput" placeholder="Address, neighborhood, or zipcode" />
+                        <span class="icon is-left">
+              <span class="fas fa-globe"></span>
+                        </span>
+                    </div>
+                    <div class="help input-text">Where are you?</div>
+                </div>
 
-      <!-- iframe and results go here -->
-      <div class="column" id="result">
+                <div class="column is-narrow">
+                    <!-- search button -->
+                    <div class="field">
+                        <div class="control">
+                            <button id="search" class="button is-link">let's eat!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      </div>
-      <div class="column" id="map">
-        <iframe>
+        <section class="columns">
+            <div class="m-auto has-text-centered">
+                <!-- spinning animation goes here  -->
+            </div>
 
-        </iframe>
-      </div>
-    </section>
-  </main>
+            <!-- iframe and results go here -->
+            <div class="column has-text-centered is-size-2" id="result"></div>
+            <div id="map"></div>
+        </section>
+    </main>
 
-  <footer class="has-text-right p-2 has-background-primary has-text-light">
-    built by team tensor &copy;2021
-  </footer>
+    <footer class="has-text-right p-2 has-background-primary has-text-light">
+        built by team tensor &copy;2021
+    </footer>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBofEj2qphNYQMAJmhTqnmDt28sjHIEDMA"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
