@@ -43,12 +43,12 @@ function DisplayData(data) {
     url = data.url;
     rating = data.rating;
     var resultTileEl = document.createElement("article");
-    resultTileEl.className = "box result-spot";
+    resultTileEl.className = "box result-spot pb-2";
     var nameEl = document.createElement("a");
     nameEl.href = url;
     nameEl.target = "_blank";
     nameEl.textContent = data.name;
-    nameEl.className = "subtitle";
+    nameEl.className = "subtitle block";
     var addressEl = document.createElement("address");
     addressEl.innerHTML =
         data.location.address1 +
