@@ -1,3 +1,4 @@
+var favoriteArr = [];
 var appendFavorites = document.getElementById("favorites");
 
 function getData() {
@@ -5,13 +6,14 @@ function getData() {
     pastSearch = JSON.parse(pastSearch);
 
     for (i in pastSearch) {
-        favorites(pastSearch[i]);
+        favoriteArr.push(pastSearch[i]);
+        favorites(pastSearch[i], i);
     }
 }
 
 getData();
 
-function favorites(search) {
+function favorites(search, index) {
     var parentDiv = document.createElement("div");
     parentDiv.classList = "tile is-parent is-3 fav-spot m-3";
     appendFavorites.appendChild(parentDiv);
@@ -34,8 +36,18 @@ function favorites(search) {
     article.appendChild(paragraph);
 
     var button = document.createElement("button");
+    button.setAttribute("data-index", index);
     button.classList = "button is-danger is-inverted";
     button.innerHTML =
         "<span class='fas fa-trash-alt mr-2'></span>Remove from favorites";
     article.appendChild(button);
 }
+
+$(document).on("click", ".button", function() {
+    var index = $(this).attr("data-index");
+    console.log(index);
+    favoriteArr.splice(index, 1);
+    console.log(favoriteArr);
+    localStorage.setItem("favorite", JSON.stringify(favoriteArr));
+    location.reload();
+})
