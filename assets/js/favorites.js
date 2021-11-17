@@ -13,7 +13,7 @@ getData();
 
 function favorites(search) {
     var parentDiv = document.createElement("div");
-    parentDiv.classList = "tile is-parent is-3 fav-spot";
+    parentDiv.classList = "tile is-parent is-3 fav-spot m-3";
     appendFavorites.appendChild(parentDiv);
 
     var article = document.createElement("article");
