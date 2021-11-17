@@ -1,20 +1,41 @@
-# Let's Eat!
+# Let's Eat
 
-Project 1: an app that streamlines the restaurant decision-making process based on the location entered by the user by generating one restaurant at random.
+## Description
 
-### [live at GH-Pages](https://a-breezy.github.io/meetMe/)
+This is an app that returns an instant restaurant suggestion result based on the user’s location, whether by zipcode, neighborhood, or address. Its goal is to streamline the restaurant decision-making process by generating only one restaurant at random. This app was created in response to the overwhelming choices people face each day, in fulfillment of Columbia University’s Coding Engineering Bootcamp, Project 1.
 
-### [Github Repo](https://github.com/a-breezy/meetMe)
+## Table of Contents
 
-### [Project Board](https://github.com/a-breezy/meetMe/projects/2)
+- [Links](#links)
+- [Usages](#usages)
+- [Resources](#resources)
+- [Contribution](#contribution)
 
-## User Story
+## Links
 
-As a - who
-Hungry choice-averse person in the U.S.
+- [Live page](https://a-breezy.github.io/LetsEat/)
+- [GitHub Repo](https://github.com/a-breezy/LetsEat)
 
-I want -what
-To find a place to eat right away.
+## Usages
 
-Because - why
-I have option fatigue and just want to eat.
+![Let's Eat HomePage](./assets/images/letsEat_homepage.png)
+![Let's Eat Favorites Page](./assets/images/letsEat_favorites.png)
+
+## Resources
+
+- [Bulma](https://bulma.io/)
+- [fontAwesome](https://fontawesome.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Google Maps](https://developers.google.com/maps/apis-by-platform)
+- [jQuery](https://jquery.com/)
+- [Polyfill.io](https://polyfill.io/v3/)
+- [Moment](https://momentjs.com/docs/)
+
+## Contribution
+
+Made with ❤️ by team tensor &copy;2021
+
+- [@labchild](https://github.com/labchild)
+- [@pcancio](https://github.com/pcancio)
+- [@andrewyu22](https://github.com/andrewyu22)
+- [@a-breezy](https://github.com/a-breezy)

@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Let's Eat! Favorite Spots</title>
@@ -19,55 +19,38 @@
             <nav class="navbar align-items-center m-2">
                 <div class="navbar-brand">
                     <div class="navbar-item title mb-0">
-                        let's eat!
+                        <a class="title text-align-center" href="./index.html">
+                            let's eat!
+                        </a>
                     </div>
                     <div class="narbar-item mb-0">
-                        <a class="title text-align-center" href="/">
+                        <a class="title text-align-center" href="./index.html">
                             <img src="./assets/images/lets-eat-white.png">
                         </a>
                     </div>
-                    <a role="button" class="navbar-burger" data-target="navigation"></a>
-                </div>
-                <div class="navbar-menu">
-                    <div class="navbar-end" id="navigation">
-                        <a class="navbar-item" href="./favorites.html">
-                            Your Restaurants
-                            <span class="fas fa-star ml-2"></span>
-                        </a>
-
-                    </div>
+                    <a class="navbar-item" href="./favorites.html">
+                        Your Restaurants
+                        <span class="fas fa-star ml-2"></span>
+                    </a>
                 </div>
             </nav>
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <h1 class="title pb-5 mx-auto hero-text">let's eat!</h1>
-                    <p class="subtitle pt-5">
-                        The best spots you've found with let's eat!
-                    </p>
-                </div>
+        </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title pb-5 mx-auto hero-text">let's eat!</h1>
+                <p class="subtitle pt-5">
+                    The best spots you've found with let's eat!
+                </p>
             </div>
         </div>
     </header>
 
-    <main class="m-4">
-        <section class="m-4 tile is-ancestor" id="favorites">
-            <!-- example favorite  -->
-            <div class="tile is-parent is-3 fav-spot">
-                <article class="tile is-child box">
-                    <h3 class="subtitle">Some Cafe</h3>
-                    <p class="content">
-                        45 Rockefeller Center<br>
-                        New York, NY 10111
-                    </p>
-                    <button class="button is-danger is-inverted">
-                        <span class="fas fa-trash-alt mr-2"></span>
-                        Remove from favorites
-                    </button>
-                </article>
-            </div>
-
+    <main class="has-background-light">
+        <section class="m-6 tile is-ancestor is-flex is-flex-wrap-wrap is-justify-content-space-evenly" id="favorites">
+           <!-- favorites generated here   -->
         </section>
     </main>
+    <script src="./assets/js/favorites.js"></script>
 </body>
 
 </html>
