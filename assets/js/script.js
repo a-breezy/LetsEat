@@ -3,12 +3,16 @@ var favorite = [];
 var tempObj;
 let map;
 
+// Call Yelp API
 function yelpAPI() {
+    // value of location searched
     var location = document.querySelector("#locationInput").value;
+    // Api URL
     var apiURL =
         "https://uatapi.smartechc.com/api/test/yelpsearch?term=restaurants&radius=500&location=" +
         location +
         "&open_now=true&limit=50";
+    // aJax call to fetch data from yelp API
     $.ajax({
         type: "GET",
         url: apiURL,
@@ -17,17 +21,21 @@ function yelpAPI() {
             // Randomize the array Index
             var randomIndex = Math.floor(Math.random() * data.businesses.length);
             console.log(data);
+            // Call function DisplayData and passed on 1 Array Object
             DisplayData(data.businesses[randomIndex]);
+            // Store it global Temp (Incase they click save)
             tempObj = data.businesses[randomIndex];
             console.log(tempObj);
         },
     });
 }
 
+// Save to local storage favorites
 function saveLocalstorage() {
     localStorage.setItem("favorite", JSON.stringify(favorite));
 }
 
+// Get from Local Storages
 function getStorage() {
     var storeItem = localStorage.getItem("favorite");
     storeItem = JSON.parse(storeItem);
@@ -36,6 +44,7 @@ function getStorage() {
     }
 }
 
+// Output the data 
 function DisplayData(data) {
     results.html("");
     var url, rating;
@@ -72,6 +81,7 @@ function DisplayData(data) {
     categoryEl.className = "content";
     var moneyEl = document.createElement("p");
     moneyEl.className = "content";
+    // Check if Price is avaialable
     if (data.price === null || data.price === "" || data.price === undefined) {
         moneyEl.textContent = "Price: Not Available";
     } else {
@@ -83,9 +93,10 @@ function DisplayData(data) {
     favoriteButtonEl.innerHTML = "<spas class='far fa-star mr-2'></span>Save for later";
     results.append(resultTileEl);
     resultTileEl.append(nameEl, addressEl, categoryEl, moneyEl, favoriteButtonEl);
-    
+
 }
 
+// GOogle Map API Function
 function initMap(lat, long) {
     var options = {
         center: {
@@ -105,6 +116,7 @@ function initMap(lat, long) {
     })
 }
 
+// Save Button Function
 function saveFavorite() {
     console.log("in this save FunctioN");
     favorite.push(tempObj);

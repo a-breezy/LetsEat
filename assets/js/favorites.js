@@ -1,6 +1,7 @@
 var favoriteArr = [];
 var appendFavorites = document.getElementById("favorites");
 
+// Get Data from Local storage
 function getData() {
     var pastSearch = localStorage.getItem("favorite");
     pastSearch = JSON.parse(pastSearch);
@@ -11,8 +12,7 @@ function getData() {
     }
 }
 
-getData();
-
+// Add all items store in local storage to favorites.html
 function favorites(search, index) {
     var parentDiv = document.createElement("div");
     parentDiv.classList = "tile is-parent is-3 fav-spot m-3";
@@ -43,6 +43,8 @@ function favorites(search, index) {
     article.appendChild(button);
 }
 
+getData();
+// Remove Button Function
 $(document).on("click", ".button", function() {
     var index = $(this).attr("data-index");
     console.log(index);
