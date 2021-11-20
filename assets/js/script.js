@@ -37,8 +37,11 @@ function saveLocalstorage() {
 
 // Get from Local Storages
 function getStorage() {
+    // Get Item from Local storage
     var storeItem = localStorage.getItem("favorite");
+    // JSON parse the item
     storeItem = JSON.parse(storeItem);
+    // Loop item to store it back to global favorite array 
     for (item in storeItem) {
         favorite.push(storeItem[item]);
     }
@@ -48,16 +51,19 @@ function getStorage() {
 function DisplayData(data) {
     results.html("");
     var url, rating;
+    // Call Google Map and pass the yelp latitude & Longitude
     initMap(data.coordinates.latitude, data.coordinates.longitude);
     url = data.url;
     rating = data.rating;
     var resultTileEl = document.createElement("article");
     resultTileEl.className = "box result-spot pb-2";
+    // Make name as a clickable redirect page to yelp
     var nameEl = document.createElement("a");
     nameEl.href = url;
     nameEl.target = "_blank";
     nameEl.textContent = data.name;
     nameEl.className = "subtitle block";
+    // Create address to append
     var addressEl = document.createElement("address");
     addressEl.innerHTML =
         data.location.address1 +
@@ -72,13 +78,17 @@ function DisplayData(data) {
         " </br>P:" +
         data.phone.replace('+', '');
     addressEl.className = "content pt-4";
+    // Create Category to append
     var categoryStr = "";
     var categoryEl = document.createElement("p");
+    // concat all the categories
     for (x in data.categories) {
         categoryStr += data.categories[x].title + "/";
     }
+    // slice the last "/"
     categoryEl.textContent = "Category: " + categoryStr.slice(0, -1);
     categoryEl.className = "content";
+    // Create Money to Append
     var moneyEl = document.createElement("p");
     moneyEl.className = "content";
     // Check if Price is avaialable
@@ -98,15 +108,18 @@ function DisplayData(data) {
 
 // GOogle Map API Function
 function initMap(lat, long) {
+    // google object for latitude and longitude
     var options = {
-        center: {
-            lat: lat,
-            lng: long
-        },
-        zoom: 18
-    }
+            center: {
+                lat: lat,
+                lng: long
+            },
+            zoom: 18
+        }
+        // Store the map back to the index.html with id="map"
     map = new google.maps.Map(document.getElementById("map"), options);
     $("#map").addClass("box");
+    // Create a marker on Google Maps
     const marker = new google.maps.Marker({
         position: {
             lat: lat,
@@ -119,8 +132,10 @@ function initMap(lat, long) {
 // Save Button Function
 function saveFavorite() {
     console.log("in this save FunctioN");
+    // Push the tempObj into the Favorite's Array
     favorite.push(tempObj);
     console.log(favorite);
+    // Call save function to save to local storage
     saveLocalstorage();
 }
 
