@@ -4,47 +4,26 @@ var tempObj;
 let map;
 
 function yelpAPI() {
-	var location = document.querySelector("#locationInput").value;
-	var apiURL =
-		"https://api.yelp.com/v3/businesses/matches/postal_code" + location;
-	// "&open_now=true&limit=50";
-	// var apiURL =
-	//     "https://uatapi.smartechc.com/api/test/yelpsearch?term=restaurants&radius=500&location=" +
-	//     location +
-	//     "&open_now=true&limit=50";
-	// $.ajax({
-	//     type: "GET",
-	//     url: "https://api.yelp.com/v3/businesses/matches/postal_code/10024",
-	//     // url: apiURL,
-	//     header: 'Authorization: P0XdL-V5lKSH9PZ32Pv6SLRmYdYm11Xujl5UpCjYgBIR-MA9wYbNCzy65fup4wvQ5-6cuMoE_3KCe7wuM2TP0FwCOCG9pBXeqDRAiA4MDm48vPnx9nyuqbmHUWP5Y3Yx',
-	//     header: 'accept: application/json',
-	//     dataType: "json",
-	//     success: function(data) {
-	//         // Randomize the array Index
-	//         var randomIndex = Math.floor(Math.random() * data.businesses.length);
-	//         console.log(data);
-	//         DisplayData(data.businesses[randomIndex]);
-	//         tempObj = data.businesses[randomIndex];
-	//         console.log(tempObj);
-	//     },
-	// });
-	var options = {
-		method: "GET",
-		headers: {
-			accept: "application/json",
-			Authorization:
-				"Bearer P0XdL-V5lKSH9PZ32Pv6SLRmYdYm11Xujl5UpCjYgBIR-MA9wYbNCzy65fup4wvQ5-6cuMoE_3KCe7wuM2TP0FwCOCG9pBXeqDRAiA4MDm48vPnx9nyuqbmHUWP5Y3Yx",
-		},
-	};
+	var userLocation = document.querySelector("#locationInput").value;
 
 	axios
-		.get(
-			"https://api.yelp.com/v3/businesses/matches/postal_code/10024",
-			options
-		)
-		.then((response) => response.json())
-		.then((response) => console.log(response))
-		.catch((err) => console.error(err));
+		.get("https://it-servers-us-well.herokuapp.com/businesses/search", {
+			params: {
+				location: userLocation,
+			},
+		})
+		.then((response) => {
+			let businesses = response.data;
+			let randomBusiness =
+				businesses[Math.floor(Math.random() * businesses.length)];
+			let businessLocation = {
+				lat: randomBusiness.coordinates.latitude,
+				long: randomBusiness.coordinates.longitude,
+			};
+			console.log(randomBusiness);
+			console.log(businessLocation);
+		})
+		.catch((err) => console.error("html", err));
 }
 
 function saveLocalstorage() {
