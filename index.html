@@ -88,9 +88,12 @@
 				</div>
 			</section>
 
-			<!-- map is built here -->
+			<!-- results are printed to the page -->
 			<section class="columns is-vcentered has-background-light">
-				<div class="column is-4 has-text-centered mx-4" id="result"></div>
+				<!-- restaurant name, location, price, rating, and category are printed -->
+				<div class="column is-4 has-text-centered mx-4" id="restaurant-data"></div>
+				
+				<!-- map is created -->
 				<div class="column mx-4" id="map"></div>
 			</section>
 		</main>
@@ -103,7 +106,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 		<script
 			async
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiTz7YWm9clWb9ROa32flFDg7oFolQBvg&callback=initMap"
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiTz7YWm9clWb9ROa32flFDg7oFolQBvg"
 		></script>
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="./assets/js/script.js"></script>
