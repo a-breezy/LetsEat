@@ -1,4 +1,4 @@
-var results = $("#result");
+var restaurantData = $("#restaurant-data");
 var favorite = [];
 var tempObj;
 let map;
@@ -17,14 +17,25 @@ function yelpAPI() {
 			let businesses = response.data;
 			let randomBusiness =
 				businesses[Math.floor(Math.random() * businesses.length)];
-			let businessLocation = {
-				lat: randomBusiness.coordinates.latitude,
-				long: randomBusiness.coordinates.longitude,
+			let businessData = {
+				businessLocation: {
+					lat: randomBusiness.coordinates.latitude,
+					lng: randomBusiness.coordinates.longitude,
+				},
+				name: randomBusiness.name,
+				address: [
+					randomBusiness.location.display_address[0],
+					randomBusiness.location.display_address[1],
+				],
+				price: randomBusiness.price,
+				rating: randomBusiness.rating,
+				url: randomBusiness.url,
+				categories: randomBusiness.categories,
 			};
-			console.log(randomBusiness);
-			console.log(businessLocation);
+			tempObj = businessData;
+			DisplayData(businessData);
 		})
-		.catch((err) => console.error("html", err));
+		.catch((err) => console.error(err));
 }
 
 // Save to local storage favorites
@@ -41,88 +52,85 @@ function getStorage() {
 	}
 }
 
-// Output the data 
-function DisplayData(data) {
-	results.html("");
-	var url, rating;
-	initMap(data.coordinates.latitude, data.coordinates.longitude);
-	url = data.url;
-	rating = data.rating;
-	var resultTileEl = document.createElement("article");
-	resultTileEl.className = "box result-spot pb-2";
-	var nameEl = document.createElement("a");
+function DisplayData(businessData) {
+	let { businessLocation, name, address, rating, price, url, categories } =
+		businessData;
+	restaurantData.html("");
+
+	initMap(businessLocation);
+
+	let restDataEl = document.createElement("article");
+	restDataEl.className = "box result-spot pb-2";
+
+	let nameEl = document.createElement("a");
 	nameEl.href = url;
 	nameEl.target = "_blank";
-	nameEl.textContent = data.name;
+	nameEl.textContent = name;
 	nameEl.className = "subtitle block";
+	console.log(nameEl);
+
+	// create element for address
 	var addressEl = document.createElement("address");
-	addressEl.innerHTML =
-		data.location.address1 +
-		" </br>" +
-		data.location.city +
-		", " +
-		data.location.state +
-		" " +
-		data.location.zip_code +
-		" " +
-		data.location.country +
-		" </br>P:" +
-		data.phone.replace("+", "");
+	addressEl.innerHTML = address[0] + " </br>" + address[1];
 	addressEl.className = "content pt-4";
+	console.log(addressEl);
+
+	// create element for categories
 	var categoryStr = "";
 	var categoryEl = document.createElement("p");
-	for (x in data.categories) {
-		categoryStr += data.categories[x].title + "/";
+	categoryEl.className = "content";
+	for (x in categories) {
+		if (x < 2) {
+			categoryStr += categories[x].title + " · ";
+		} else {
+			categoryStr += categories[x].title;
+		}
 	}
 	categoryEl.textContent = "Category: " + categoryStr.slice(0, -1);
-	categoryEl.className = "content";
-	var moneyEl = document.createElement("p");
-	moneyEl.className = "content";
-	if (data.price === null || data.price === "" || data.price === undefined) {
-		moneyEl.textContent = "Price: Not Available";
+
+	// create element for price
+	var priceEl = document.createElement("p");
+	priceEl.className = "content";
+	if (price === null || price === "" || price === undefined) {
+		priceEl.textContent = "Price: Not Available";
 	} else {
-		moneyEl.textContent = "Price: " + data.price;
+		priceEl.textContent = "Price: " + price;
 	}
+
+	// add in a favorite button
 	var favoriteButtonEl = document.createElement("button");
 	favoriteButtonEl.id = "favorite";
 	favoriteButtonEl.className = "button is-warning is-outlined";
 	favoriteButtonEl.innerHTML =
 		"<spas class='far fa-star mr-2'></span>Save for later";
-	results.append(resultTileEl);
-	resultTileEl.append(nameEl, addressEl, categoryEl, moneyEl, favoriteButtonEl);
+
+	// append the results of yelp search
+	restaurantData.append(restDataEl);
+	restDataEl.append(nameEl, addressEl, categoryEl, priceEl, favoriteButtonEl);
 }
 
-// GOogle Map API Function
-function initMap(lat, long) {
-    // google object for latitude and longitude
-    var options = {
-            center: {
-                lat: lat,
-                lng: long
-            },
-            zoom: 18
-        }
-        // Store the map back to the index.html with id="map"
-    map = new google.maps.Map(document.getElementById("map"), options);
-    $("#map").addClass("box");
-    // Create a marker on Google Maps
-    const marker = new google.maps.Marker({
-        position: {
-            lat: lat,
-            lng: long
-        },
-        map: map
-    })
+// init a google map to put in the above function
+function initMap(businessLocation) {
+	map = new google.maps.Map(document.getElementById("map"), {
+		center: businessLocation,
+		zoom: 18,
+	});
+
+	// append map instance to map id on page
+	$("#map").addClass("box");
+
+	// put a marker on the map
+	const marker = new google.maps.Marker({
+		position: businessLocation,
+		map: map,
+	});
 }
 
 // Save Button Function
 function saveFavorite() {
-    console.log("in this save FunctioN");
-    // Push the tempObj into the Favorite's Array
-    favorite.push(tempObj);
-    console.log(favorite);
-    // Call save function to save to local storage
-    saveLocalstorage();
+	favorite.push(tempObj);
+	// console.log(favorite);
+	saveLocalstorage();
 }
 
 getStorage();

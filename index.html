@@ -88,9 +88,12 @@
 				</div>
 			</section>
 
+			<!-- results are printed to the page -->
 			<section class="columns is-vcentered has-background-light">
-				<!-- iframe and results go here -->
-				<div class="column is-4 has-text-centered mx-4" id="result"></div>
+				<!-- restaurant name, location, price, rating, and category are printed -->
+				<div class="column is-4 has-text-centered mx-4" id="restaurant-data"></div>
+				
+				<!-- map is created -->
 				<div class="column mx-4" id="map"></div>
 			</section>
 		</main>
@@ -105,7 +108,6 @@
 			async
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiTz7YWm9clWb9ROa32flFDg7oFolQBvg"
 		></script>
-    <!-- testing axios for CORS err -->
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="./assets/js/script.js"></script>
 	</body>
