@@ -2,14 +2,19 @@
 
 ## Description
 
-This is an app that returns an instant restaurant suggestion result based on the user’s location, whether by zipcode, neighborhood, or address. Its goal is to streamline the restaurant decision-making process by generating only one restaurant at random. This app was created in response to the overwhelming choices people face each day, in fulfillment of Columbia University’s Coding Engineering Bootcamp, Project 1.
+A web app where the user inputs a location and a restaurant is randomly selected and rendered on Google Maps. The app uses the Yelp Fusion API to find a restaurant based on inputed location, whether a zipcode or an address. The goal here is to streamline the decision of where to eat by generating only one restaurant at random. This app was created in response to the overwhelming choices people face each day. Check out the live app [here](https://a-breezy.github.io/LetsEat/).
+
+Also, in order to bypass CORS issues, an Express server was created for the sole purpose of using the CORS middleware to fix the error.
 
 ## Table of Contents
 
-- [Links](#links)
-- [Usages](#usages)
-- [Resources](#resources)
-- [Contribution](#contribution)
+- [Let's Eat](#lets-eat)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Links](#links)
+  - [Usages](#usages)
+  - [Resources](#resources)
+  - [Contribution](#contribution)
 
 ## Links
 
@@ -23,13 +28,16 @@ This is an app that returns an instant restaurant suggestion result based on the
 
 ## Resources
 
+- [Yelp Fusion API](https://fusion.yelp.com/)
+- [Google Maps](https://developers.google.com/maps/apis-by-platform)
 - [Bulma](https://bulma.io/)
 - [fontAwesome](https://fontawesome.com/)
 - [Google Fonts](https://fonts.google.com/)
-- [Google Maps](https://developers.google.com/maps/apis-by-platform)
 - [jQuery](https://jquery.com/)
 - [Polyfill.io](https://polyfill.io/v3/)
 - [Moment](https://momentjs.com/docs/)
+- [Axios](https://axios-http.com/)
+- [CORS](https://www.npmjs.com/package/cors)
 
 ## Contribution
 
