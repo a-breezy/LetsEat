@@ -34,9 +34,9 @@ function favorites(search, index) {
     var paragraph = document.createElement("p");
     paragraph.classList = "content";
     paragraph.innerHTML =
-        search.location.display_address[0] +
+        search.address[0] +
         "<br/>" +
-        search.location.display_address[1];
+        search.address[1];
     article.appendChild(paragraph);
 
     var button = document.createElement("button");
