@@ -3,6 +3,7 @@ var favorite = [];
 var tempObj;
 let map;
 
+// Call Yelp API
 function yelpAPI() {
 	var userLocation = document.querySelector("#locationInput").value;
 
@@ -37,10 +38,12 @@ function yelpAPI() {
 		.catch((err) => console.error(err));
 }
 
+// Save to local storage favorites
 function saveLocalstorage() {
 	localStorage.setItem("favorite", JSON.stringify(favorite));
 }
 
+// Get from Local Storages
 function getStorage() {
 	var storeItem = localStorage.getItem("favorite");
 	storeItem = JSON.parse(storeItem);
@@ -123,6 +126,7 @@ function initMap(businessLocation) {
 	});
 }
 
+// Save Button Function
 function saveFavorite() {
 	favorite.push(tempObj);
 	// console.log(favorite);
